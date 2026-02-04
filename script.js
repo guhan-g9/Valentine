@@ -144,8 +144,8 @@ function dodgeNo() {
 
   noBtn.style.transform = `translate(${x}px, ${y}px)`;
 
-  if (noAttempts === 3) hint.textContent = "Why are you even trying? 😏";
-  if (noAttempts === 6) hint.textContent = "You already know the answer 💖";
+  if (noAttempts === 3) hint.textContent = "";
+  if (noAttempts === 6) hint.textContent = "";
 }
 
 noBtn.addEventListener("pointerenter", dodgeNo);
