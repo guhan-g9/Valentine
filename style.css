@@ -238,7 +238,7 @@ input[type="range"]::-moz-range-thumb {
 
 
 /* =========================
-   DARE MODAL
+   DARE MODAL (MOBILE SAFE)
    ========================= */
 .modal {
   position: fixed;
@@ -254,25 +254,29 @@ input[type="range"]::-moz-range-thumb {
   background: white;
   color: #ff2e63;
   margin-top: 20px;
-  padding: 28px 22px 20px; /* ⬅️ extra top padding */
-  border-radius: 14px;
-  width: calc(100% - 40px);
+  width: calc(100% - 32px);
   max-width: 420px;
-  position: relative;
-  animation: slideDown 0.4s ease;
+  border-radius: 14px;
+  overflow: hidden; /* important */
+  animation: slideDown 0.35s ease;
 }
 
-
-.modal-content p {
-  font-size: 1rem;
-  margin: 0;
-  text-align: center;
+/* HEADER ROW */
+.modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 4px;
+  border-bottom: 1px solid rgba(0,0,0,0.08);
 }
 
+.modal-title {
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+/* CLOSE BUTTON */
 .close-btn {
-  position: absolute;
-  top: 8px;
-  right: 10px;
   background: none;
   border: none;
   font-size: 1.1rem;
@@ -281,22 +285,31 @@ input[type="range"]::-moz-range-thumb {
   color: #999;
 }
 
-
-.close-btn:hover {
+.close-btn:active {
   color: #ff2e63;
 }
 
+/* TEXT */
+.modal-content p {
+  padding: 14px;
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.45;
+  text-align: center;
+}
+
+/* ANIMATION */
 @keyframes slideDown {
   from {
-    transform: translateY(-20px);
+    transform: translateY(-12px);
     opacity: 0;
   }
   to {
     transform: translateY(0);
     opacity: 1;
-    opacity: 1;
   }
 }
+
 
 
 /* =========================
