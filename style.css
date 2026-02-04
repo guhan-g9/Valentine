@@ -254,13 +254,14 @@ input[type="range"]::-moz-range-thumb {
   background: white;
   color: #ff2e63;
   margin-top: 20px;
-  padding: 18px 22px;
+  padding: 28px 22px 20px; /* ⬅️ extra top padding */
   border-radius: 14px;
   width: calc(100% - 40px);
   max-width: 420px;
   position: relative;
   animation: slideDown 0.4s ease;
 }
+
 
 .modal-content p {
   font-size: 1rem;
