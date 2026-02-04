@@ -3,13 +3,30 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>💖 Valentine?</title>
+  <title>For Disha 💖</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-  <div class="container">
-    <h1>Will you be my Valentine? 💕</h1>
+<div class="container">
+
+  <!-- COUNTDOWN -->
+  <div id="countdownScreen">
+    <h1 class="countdown-title">Something special unlocks in… ⏳</h1>
+    <div class="countdown-box">
+      <div><span id="days">0</span><label>Days</label></div>
+      <div><span id="hours">0</span><label>Hours</label></div>
+      <div><span id="minutes">0</span><label>Minutes</label></div>
+      <div><span id="seconds">0</span><label>Seconds</label></div>
+    </div>
+  </div>
+
+  <!-- SCREEN 1 -->
+  <div id="screen1" class="hidden">
+    <h1>
+      Disha Jangwan,<br>
+      will you be my Valentine? 💕
+    </h1>
 
     <div class="buttons">
       <button id="yesBtn">Yes 💘</button>
@@ -17,17 +34,57 @@
     </div>
 
     <p id="hint"></p>
-
-    <div id="result" class="hidden">
-      <h2>YAY!! 🥹💖</h2>
-      <p>
-        I knew you’d say yes.  
-        Happy Valentine’s Day 💕  
-        Dinner’s on me 😘
-      </p>
-    </div>
   </div>
 
-  <script src="script.js"></script>
+  <!-- SCREEN 2 -->
+  <div id="screen2" class="hidden">
+    <h1>Yay, I knew you’d say yes. 🍾🪩</h1>
+    <br>
+    <h2>Okay… prove it 😌</h2>
+    <p>Slide to confirm 💖</p>
+    <input type="range" id="slider" min="0" max="100" value="0" />
+  </div>
+
+  <!-- SCREEN 3 : FAKE LOADING -->
+  <div id="screen3" class="hidden">
+
+    <!-- STEP 1 -->
+    <div class="loader step step-1">
+      <div class="dots">
+        <span></span><span></span><span></span>
+      </div>
+      <h2>Checking compatibility… 💕</h2>
+    </div>
+
+    <!-- STEP 2 -->
+    <div class="loader step step-2 hidden">
+      <div class="cards">
+        <div></div><div></div><div></div>
+      </div>
+      <h2>Replaying memories… 📸</h2>
+    </div>
+
+    <!-- STEP 3 -->
+    <div class="loader step step-3 hidden">
+      <div class="ring"></div>
+      <h2>Calculating love… ❤️</h2>
+    </div>
+
+  </div>
+
+  <!-- SCREEN 4 -->
+  <div id="screen4" class="hidden">
+    <h1>💫 Happy 2 Years, Disha 💫</h1>
+    <img src="disha.jpg" class="photo" alt="Disha" />
+    <p>
+      Two years ago, we chose each other.  
+      And I’d still choose you — every single time 💖
+    </p>
+    <p class="date">5 February • Forever us 🥂</p>
+  </div>
+
+</div>
+
+<script src="script.js"></script>
 </body>
 </html>
