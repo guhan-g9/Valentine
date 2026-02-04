@@ -6,7 +6,7 @@ const TARGET_DATE = new Date("2026-02-04T00:00:00");
 
 /********************************
  * DARE MESSAGES (MUST BE FIRST)
- ********************************/
+ *********************************/
 const dareMessages = [
   "😈 Dare you to click “No”… if you can.",
   "Hmm… still trying? Bold choice 😏",
