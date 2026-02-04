@@ -169,7 +169,7 @@ input[type="range"]::-moz-range-thumb {
   40% { opacity: 1; }
 }
 
-/* =========================
+/* ==========================
    FAKE LOADING – STEP 2
    Replaying memories
    ========================= */
@@ -291,6 +291,7 @@ input[type="range"]::-moz-range-thumb {
   }
   to {
     transform: translateY(0);
+    opacity: 1;
     opacity: 1;
   }
 }
