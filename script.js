@@ -7,37 +7,47 @@ const buttons = document.querySelector(".buttons");
 let dodgeCount = 0;
 const MAX_DODGES = 7;
 
-noBtn.addEventListener("mouseenter", () => {
+function dodgeNoButton() {
   if (dodgeCount >= MAX_DODGES) return;
 
   dodgeCount++;
 
   const containerRect = buttons.getBoundingClientRect();
   const btnRect = noBtn.getBoundingClientRect();
+  const padding = 10;
 
-  const maxX = containerRect.width - btnRect.width;
-  const maxY = containerRect.height - btnRect.height;
+  const maxX = containerRect.width - btnRect.width - padding;
+  const maxY = containerRect.height - btnRect.height - padding;
 
   const randomX = Math.random() * maxX;
   const randomY = Math.random() * maxY;
 
   noBtn.style.transform = `translate(${randomX}px, ${randomY}px)`;
 
-  if (dodgeCount === 3) {
-    hint.textContent = "Why is this so hard to click? 🤔";
+  if (dodgeCount === 2) {
+    hint.textContent = "Hmm… that’s weird 🤔";
   }
 
-  if (dodgeCount === 5) {
+  if (dodgeCount === 4) {
+    hint.textContent = "Why are you still trying? 😏";
+    noBtn.style.transform += " scale(0.9)";
+  }
+
+  if (dodgeCount === 6) {
+    hint.textContent = "Just say yes already 💖";
     noBtn.style.transform += " scale(0.8)";
-    hint.textContent = "At this point… just say yes 😌";
   }
 
   if (dodgeCount >= MAX_DODGES) {
-    noBtn.style.opacity = "0.3";
     noBtn.disabled = true;
+    noBtn.style.opacity = "0.3";
     hint.textContent = "Okay okay… I give up 😭";
   }
-});
+}
+
+// Works on BOTH desktop & mobile
+noBtn.addEventListener("pointerenter", dodgeNoButton);
+noBtn.addEventListener("pointerdown", dodgeNoButton);
 
 yesBtn.addEventListener("click", () => {
   buttons.style.display = "none";
@@ -51,17 +61,16 @@ function launchConfetti() {
   const end = Date.now() + duration;
 
   (function frame() {
-    const confetti = document.createElement("div");
-    confetti.textContent = "💖";
-    confetti.style.position = "fixed";
-    confetti.style.left = Math.random() * 100 + "vw";
-    confetti.style.top = "-20px";
-    confetti.style.fontSize = "24px";
-    confetti.style.animation = "fall 2s linear";
+    const heart = document.createElement("div");
+    heart.textContent = "💖";
+    heart.style.position = "fixed";
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.top = "-20px";
+    heart.style.fontSize = "24px";
+    heart.style.animation = "fall 2s linear";
 
-    document.body.appendChild(confetti);
-
-    setTimeout(() => confetti.remove(), 2000);
+    document.body.appendChild(heart);
+    setTimeout(() => heart.remove(), 2000);
 
     if (Date.now() < end) {
       requestAnimationFrame(frame);
