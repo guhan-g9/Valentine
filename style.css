@@ -295,3 +295,81 @@ input[type="range"]::-moz-range-thumb {
     opacity: 1;
   }
 }
+
+
+/* =========================
+   CONFETTI
+   ========================= */
+.confetti {
+  position: fixed;
+  top: -10px;
+  width: 8px;
+  height: 14px;
+  background-color: red;
+  opacity: 0.9;
+  animation: fall linear forwards;
+  z-index: 9999;
+}
+
+@keyframes fall {
+  to {
+    transform: translateY(110vh) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+/* =========================
+   HEART CONFETTI
+   ========================= */
+.heart-confetti {
+  position: fixed;
+  top: -20px;
+  width: 16px;
+  height: 16px;
+  background-color: #ff2e63;
+  transform: rotate(45deg);
+  animation: heartFall linear forwards;
+  z-index: 9999;
+}
+
+.heart-confetti::before,
+.heart-confetti::after {
+  content: "";
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  background-color: #ff2e63;
+  border-radius: 50%;
+}
+
+.heart-confetti::before {
+  top: -8px;
+  left: 0;
+}
+
+.heart-confetti::after {
+  left: -8px;
+  top: 0;
+}
+
+@keyframes heartFall {
+  to {
+    transform: translateY(110vh) rotate(720deg);
+    opacity: 0;
+  }
+}
+
+.photo {
+  width: 100%;
+  max-width: 100px;   /* ⬅️ reduce size (try 180–220px) */
+  height: auto;
+  border-radius: 16px;
+  margin: 16px auto;
+  display: block;
+}
+
+@media (max-width: 480px) {
+  .photo {
+    max-width: 70px;
+  }
+}

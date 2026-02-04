@@ -152,15 +152,41 @@ noBtn.addEventListener("pointerenter", dodgeNo);
 noBtn.addEventListener("pointerdown", dodgeNo);
 
 /********************************
+ * CONFETTI EFFECT
+ ********************************/
+function launchConfetti() {
+  const colors = ["#ff2e63", "#ffb703", "#ffffff", "#ffd6e0"];
+
+  for (let i = 0; i < 120; i++) {
+    const confetti = document.createElement("div");
+    confetti.classList.add("confetti");
+
+    confetti.style.left = Math.random() * 100 + "vw";
+    confetti.style.backgroundColor =
+      colors[Math.floor(Math.random() * colors.length)];
+    confetti.style.animationDuration =
+      2 + Math.random() * 2 + "s";
+
+    document.body.appendChild(confetti);
+
+    setTimeout(() => confetti.remove(), 4000);
+  }
+}
+
+/********************************
  * YES → SLIDER FLOW
  ********************************/
 yesBtn.addEventListener("click", () => {
   questionActive = false;
+
   dareModal.style.display = "none";
+
+  launchConfetti(); // 🎉 CONFETTI HERE
 
   screen1.classList.add("hidden");
   screen2.classList.remove("hidden");
 });
+
 
 /********************************
  * SLIDER PROGRESS
@@ -176,6 +202,26 @@ slider.addEventListener("input", () => {
 });
 
 /********************************
+ * HEART CONFETTI (FINAL SCREEN)
+ ********************************/
+function launchHeartConfetti() {
+  for (let i = 0; i < 80; i++) {
+    const heart = document.createElement("div");
+    heart.classList.add("heart-confetti");
+
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.animationDuration = 3 + Math.random() * 2 + "s";
+    heart.style.opacity = 0.7 + Math.random() * 0.3;
+
+    document.body.appendChild(heart);
+
+    setTimeout(() => heart.remove(), 5000);
+  }
+}
+
+
+
+/********************************
  * FAKE LOADING SEQUENCE
  ********************************/
 function runFakeLoading() {
@@ -187,6 +233,7 @@ function runFakeLoading() {
     if (index >= loaderSteps.length) {
       screen3.classList.add("hidden");
       screen4.classList.remove("hidden");
+      launchHeartConfetti();
       return;
     }
 
