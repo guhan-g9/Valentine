@@ -2,7 +2,7 @@
  * CONFIG
  ********************************/
 const COUNTDOWN_LOCKED = true; // false for testing
-const TARGET_DATE = new Date("2026-02-04T23:06:00");
+const TARGET_DATE = new Date("2026-02-04T23:07:00");
 
 /********************************
  * DARE MESSAGES (MUST BE FIRST)
