@@ -268,17 +268,18 @@ input[type="range"]::-moz-range-thumb {
   text-align: center;
 }
 
-/* Small close button */
 .close-btn {
   position: absolute;
-  top: 6px;
-  right: 8px;
+  top: 8px;
+  right: 10px;
   background: none;
   border: none;
-  font-size: 1rem;
+  font-size: 1.1rem;
+  line-height: 1;
   cursor: pointer;
   color: #999;
 }
+
 
 .close-btn:hover {
   color: #ff2e63;
